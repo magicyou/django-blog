@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h4><a href="/blog/article_add">新增文章</a></h4>
+{% for val in articles %}
+<a href="/blog/article/{{ val.id }}">{{ val.title }}</a>
+    <br/>
+{% endfor %}
+<p><h4><a href="/blog/testAjax">测试</a></h4></p>
+</body>
+</html>

@@ -1,0 +1,42 @@
+# Logs #
+
+/easywechat.log
+Public/Uploads/
+Public/IDcard/
+jpush.log
+Public/App_file/
+# OS generated files #
+######################
+.DS_Store
+ehthumbs.db
+Icon?
+Thumbs.db
+bidex.txt
+# Compiled source #
+###################
+*.com
+*.class
+*.dll
+*.exe
+*.o
+*.so
+*.swp
+
+# Packages #
+############
+# it's better to unpack these files and commit the raw source
+# git has its own built in compression methods
+*.7z
+*.dmg
+*.gz
+*.iso
+*.jar
+*.rar
+*.tar
+*.zip
+/nbproject/private/
+# Project #
+
+# IDE
+nbproject
+.idea/

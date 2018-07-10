@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{{ article.title }}</title>
+</head>
+<body>
+<h4>{{ title }}</h4>
+<form action="" method="post">
+    {% csrf_token %}
+    <input type="hidden" name="do" value="{{ do }}">
+    <input type="hidden" name="id" value="{{ article.id | default:'0' }}">
+    <label>文章标题
+        <input type="text" name="title" value="{{ article.title }}">
+    </label>
+    <br/>
+     <label>文章内容
+        <textarea type="text" name="content" style="width:200px;height:100px;resize: none">
+            {{ article.content }}
+        </textarea>
+    </label>
+    <br/>
+    <input type="submit" value="提交">
+</form>
+{{ res }}
+</body>
+</html>

@@ -1,0 +1,43 @@
+{% include "blog/header.html" %}
+<h4><a href="/blog/article_add">新增文章</a></h4>
+{% for val in articles %}
+<a href="/blog/article/{{ val.id }}">{{ val.title }}</a>
+    <br/>
+{% endfor %}
+<button id="btn_testAjax">点击测试</button>
+{% include "blog/footer.html" %}
+<script>
+
+
+    $(function() {
+        Page.init();
+    });
+    var Page = {
+        init: function() {
+            this.bind();
+        },
+        data: {},
+        bind: function() {
+            var _this = this;
+            $('#btn_testAjax').click(function(){
+                _this.getData();
+            });
+        },
+        getData: function() {
+             var _this = this;
+            $.ajax({
+                url: '/blog/testAjax',
+                data: {
+                    'do' : 'test'
+                },
+                type: 'post',
+                success: function(res) {
+
+                },
+                error: function(){
+                    alert('删除失败！');
+                }
+            });
+        }
+    };
+</script>

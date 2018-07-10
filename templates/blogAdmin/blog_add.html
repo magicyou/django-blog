@@ -1,0 +1,94 @@
+﻿{% include "blogAdmin/header.html" %}
+<link rel="stylesheet" href="/static/plus/jq-editormd/editormd.css" />
+<div id="page-inner">
+ <div class="row">
+        <div class="col-md-12">
+            <h1 class="page-header">
+                {{ title }}
+            </h1>
+            <ol class="breadcrumb">
+              <li><a href="#">首页</a></li>
+              <li><a href="#">Library</a></li>
+              <li class="active">Data</li>
+            </ol>
+        </div>
+    </div>
+     <!-- /. ROW  -->
+  <div class="row">
+    <div class="col-lg-12">
+        <div class="panel panel-default">
+            <div class="panel-body">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="form-group">
+                            <label>文章名</label>
+                            <input class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <label>文章分类</label>
+                            <select class="form-control">
+                                <option>javascript</option>
+                                <option>html5</option>
+                                <option>css3</option>
+                                <option>php</option>
+                                <option>python</option>
+                                <option>其他</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label>是否公开</label>
+                            <div class="col-lg-12">
+                                <div class="col-lg-4">
+                                    <div class="radio">
+                                        <label>
+                                            <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" checked="">公开
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="col-lg-4">
+                                    <div class="radio">
+                                        <label>
+                                            <input type="radio" name="optionsRadios" id="optionsRadios2" value="option2">不公开
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <!-- /.row (nested) -->
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="form-group">
+                            <label>文章内容</label>
+                            <div id="my-editormd" style="width:100%;height:500px;">
+                            <textarea id="my-editormd-markdown-doc" name="my-editormd-markdown-doc" style="display:none;"></textarea>
+                            <!-- 注意：name属性的值-->
+                            <textarea id="my-editormd-html-code" name="my-editormd-html-code" style="display:none;"></textarea>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- /.panel-body -->
+        </div>
+        <!-- /.panel -->
+    </div>
+    <!-- /.col-lg-12 -->
+</div>
+</div>
+ <!-- /. PAGE WRAPPER  -->
+{% include "blogAdmin/footer.html" %}
+<script src="/static/plus/jq-editormd/editormd.min.js"></script>
+<script type="text/javascript">
+  $(function() {
+      editormd("my-editormd", {//注意1：这里的就是上面的DIV的id属性值
+          width   : "100%",
+          height  : 640,
+          syncScrolling : "single",
+          path    : "/static/plus/jq-editormd/lib/",//注意2：你的路径
+          saveHTMLToTextarea : true//注意3：这个配置，方便post提交表单
+      });
+  });
+</script>

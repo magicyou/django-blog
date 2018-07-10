@@ -1,0 +1,27 @@
+from django.shortcuts import render
+from django.http import HttpResponse
+
+import json
+
+# from . import models
+
+# 登录
+def login(request):
+    # articles = models.Article.objects.all()
+    return render(request,'blogAdmin/login.html')
+    # return HttpResponse('hello world!')
+
+# 首页
+def index(request):
+    # articles = models.Article.objects.all()
+    return render(request,'blogAdmin/index.html')
+    # return HttpResponse('hello world!')
+
+def blog(request):
+    # articles = models.Article.objects.all()
+    return render(request,'blogAdmin/blog.html')
+    # return HttpResponse('hello world!')
+
+
+
+
